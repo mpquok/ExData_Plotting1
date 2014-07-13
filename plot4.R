@@ -21,7 +21,7 @@ png(filename = "plot4.png", width = 480, height = 480)
 #Build Histogram
 par(mfrow = c(2, 2), bg=NA)
 with(power, {
-        plot(DateTime, Global_active_power, xlab= "", ylab="Global Active Power (kilowatts)", type = "l")
+        plot(DateTime, Global_active_power, xlab= "", ylab="Global Active Power", type = "l")
         plot(DateTime, Voltage, xlab = "datetime", ylab="Voltage", type = "l")
         with(power, plot(DateTime, Sub_metering_1, xlab= "", ylab="Energy sub metering", type = "l"))
         with(power, lines(DateTime, Sub_metering_2, col = "red3"))
