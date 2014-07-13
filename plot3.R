@@ -1,6 +1,8 @@
 ###############################################
 #READ DATA FOR Feb, 1, 2007 through Feb 2, 2007
 #convert date and time columns to date and time
+#add column combining date and time columns into
+#date AND time structure
 ###############################################
 
 power <- read.table("household_power_consumption.txt", header = FALSE,
@@ -18,7 +20,7 @@ power$Date <- as.Date(power$Date, "%d/%m/%Y")
 #Open PNG Device
 png(filename = "plot3.png", width = 480, height = 480)
 
-#Build Histogram
+#Build Scatterplot with multiple series and legend
 par(bg=NA)
 with(power, plot(DateTime, Sub_metering_1, xlab= "", ylab="Energy sub metering", type = "l"))
 with(power, lines(DateTime, Sub_metering_2, col = "red3"))
